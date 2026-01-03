@@ -58,9 +58,12 @@ useEffect(() => {
     <header className="sticky top-0 z-50 border-b bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         {/* Left: Brand */}
-        <span className="text-lg font-bold italic transition-all sm:text-xl lg:text-2xl">
+        <Link
+          href="/home"
+          className="text-lg font-bold italic transition-all sm:text-xl lg:text-2xl"
+        >
           {translations[leftIndex]}
-        </span>
+        </Link>
 
         {/* Center: Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-6 text-sm font-medium">

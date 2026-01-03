@@ -33,7 +33,7 @@ export default function BarChartComponent() {
         <Tooltip />
         <Legend />
         <Bar dataKey="urban" fill="#8884d8" name="Urban" />
-        <Bar dataKey="rural" fill="#82ca9d" name="Rural" />
+        <Bar dataKey="rural" fill="#2f855a" name="Rural" />
       </BarChart>
     </ResponsiveContainer>
   );

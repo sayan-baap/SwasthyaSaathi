@@ -123,3 +123,23 @@
     @apply bg-background text-foreground;
   }
 }
+
+.recharts-wrapper {
+  @apply mx-auto;
+}
+
+.recharts-default-tooltip {
+  @apply bg-background border border-border rounded-md shadow-md p-2;
+}
+
+.leaflet-container {
+  @apply rounded-md shadow-md;
+}
+
+.leaflet-popup-content-wrapper {
+  @apply bg-background text-foreground;
+}
+
+.leaflet-popup-tip {
+  @apply bg-background;
+}
