@@ -3,7 +3,7 @@
 import { useState, startTransition } from "react";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
-import { findDoctors } from "../actions/find-doctor";
+import { findDoctors } from "../../actions/find-doctor";
 import { Doctor } from "@/data/doctor";
 import doctorsData from "@/data/doctor";
 

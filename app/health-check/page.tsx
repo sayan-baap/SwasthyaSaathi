@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-import { getHealthAdvice } from "@/app/actions/health";
+import { getHealthAdvice } from "@/actions/health";
 
 const translations = [
   {

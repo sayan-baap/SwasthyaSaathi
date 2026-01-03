@@ -30,7 +30,7 @@ export default function MapComponent() {
     <MapContainer
       center={[22.251, 84.9014]}
       zoom={13}
-      style={{ height: "400px", width: "100%" }}
+      className="w-full h-[500px] md:h-[600px] lg:h-[75vh] rounded-lg"
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       {facilities.map((facility, index) => (
