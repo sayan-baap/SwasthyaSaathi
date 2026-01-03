@@ -1,84 +1,107 @@
 import Link from "next/link";
 import { Github, Linkedin } from "lucide-react";
 
+const solutions = [
+  { label: "SwasthyaMitra AI", href: "/health-check" },
+  { label: "SwasthyaConnect", href: "/find-doctor" },
+  { label: "Map", href: "/map" },
+  { label: "SwasthyaPulse", href: "/news-help" },
+  { label: "SwasthyaView", href: "/health-insights" },
+];
+
 export default function Footer() {
   return (
     <footer className="border-t bg-background">
-      <div className=" grid gap-10 py-10 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="space-y-3">
-          <h2 className="text-lg font-bold">SwasthyaSaathi</h2>
-          <p className="text-sm text-muted-foreground max-w-xs">
-            Revolutionizing Rural Healthcare
-          </p>
-        </div>
+      <div className="mx-auto max-w-7xl px-6 py-12">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Brand */}
+          <div className="space-y-2">
+            <h2 className="text-lg font-semibold">SwasthyaSaathi</h2>
+            <p className="text-sm text-muted-foreground">
+              Revolutionizing Rural Healthcare
+            </p>
+          </div>
 
-        {/* Solutions */}
-        <div>
-          <h3 className="mb-4 text-sm font-medium">Solutions</h3>
-          <ul className="space-y-3 text-sm">
-            {[
-              ["SwasthyaMitra AI", "/health-check"],
-              ["SwasthyaConnect", "/find-doctor"],
-              ["Map", "/map"],
-              ["SwasthyaPulse", "/news-help"],
-              ["SwasthyaView", "/health-insights"],
-            ].map(([label, href]) => (
-              <li key={href}>
+          {/* Solutions */}
+          <div>
+            <h3 className="mb-4 text-sm font-semibold">Solutions</h3>
+            <ul className="space-y-3 text-sm">
+              {solutions.map(({ label, href }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="text-muted-foreground transition-colors hover:text-primary"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h3 className="mb-4 text-sm font-semibold">Company</h3>
+            <ul className="space-y-3 text-sm">
+              <li>
                 <Link
-                  href={href}
+                  href="/our-team"
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
-                  {label}
+                  SwasthyaParivar
                 </Link>
               </li>
-            ))}
-          </ul>
-        </div>
+            </ul>
+          </div>
 
-        {/* Company */}
-        <div>
-          <h3 className="mb-4 text-sm font-medium">Company</h3>
-          <ul className="space-y-3 text-sm">
-            <li>
-              <Link
-                href="/our-team"
-                className="text-muted-foreground transition-colors hover:text-primary"
+          {/* Social */}
+          <div>
+            <h3 className="mb-4 text-sm font-semibold">Connect</h3>
+            <div className="flex gap-3">
+              <SocialLink
+                href="https://github.com/prabuddha-hack"
+                label="GitHub"
               >
-                SwasthyaParivar
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Connect */}
-        <div>
-          <h3 className="mb-4 text-sm font-medium">Connect</h3>
-          <div className="flex items-center gap-4">
-            <Link
-              href="https://github.com/prabuddha-hack"
-              aria-label="GitHub"
-              className="rounded-md p-2 text-muted-foreground transition hover:bg-muted hover:text-primary"
-            >
-              <Github className="h-5 w-5" />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/prabuddhaxdev/"
-              aria-label="LinkedIn"
-              className="rounded-md p-2 text-muted-foreground transition hover:bg-muted hover:text-primary"
-            >
-              <Linkedin className="h-5 w-5" />
-            </Link>
+                <Github className="h-5 w-5" />
+              </SocialLink>
+              <SocialLink
+                href="https://www.linkedin.com/in/prabuddhaxdev/"
+                label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </SocialLink>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="border-t">
-        <div className="py-6">
+        {/* Bottom bar */}
+        <div className="mt-10 border-t pt-6">
           <p className="text-center text-sm text-muted-foreground">
             © {new Date().getFullYear()} SwasthyaSaathi. All rights reserved.
           </p>
         </div>
       </div>
     </footer>
+  );
+}
+
+/* Small reusable component */
+function SocialLink({
+  href,
+  label,
+  children,
+}: {
+  href: string;
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <Link
+      href={href}
+      aria-label={label}
+      className="rounded-md p-2 text-muted-foreground transition hover:bg-muted hover:text-primary"
+    >
+      {children}
+    </Link>
   );
 }
