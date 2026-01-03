@@ -143,3 +143,17 @@
 .leaflet-popup-tip {
   @apply bg-background;
 }
+
+.text-responsive {
+    font-size: clamp(0.75rem, 2vw, 1rem);
+  }
+
+  .heading-responsive {
+    font-size: clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+/* Responsive container padding */
+.container {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}

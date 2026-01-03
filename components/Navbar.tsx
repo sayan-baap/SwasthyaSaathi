@@ -28,7 +28,7 @@ const navItems = [
   { label: "SwasthyaPulse", href: "/news-help" },
   { label: "SwasthyaView", href: "/health-insights" },
   { label: "SwasthyaParivar", href: "/our-team" },
-  { label: "Map", href: "/map" },
+  { label: "Maps", href: "/maps" },
 ];
 
 export default function Navbar() {
